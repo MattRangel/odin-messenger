@@ -1,13 +1,13 @@
 <div id="message-display"></div>
 <div id="message-form">
-  <form id="message-form" action="">
+  <%= form_with model: @message, local: false do |f| %>
     <div class="field has-addons">
       <div class="control">
-        <input id="message-input" class="input" type="text">
+        <%= f.text_field :body, id: "message-input", class: "input" %>
       </div>
       <div class="control">
-        <input class="button is-primary" type="submit" value="Send Message">
+        <%= f.submit "Send Message", class: "button is-primary" %>
       </div>
     </div>
-  </form>
+  <% end %>
 </div>
