@@ -3,6 +3,6 @@ class HangoutsController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = Message.include(:user)
+    @messages = Message.includes(:user)
   end
 end
